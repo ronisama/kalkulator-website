@@ -24,12 +24,6 @@ body{
     height: inherit;
     justify-content: center;
 }
-@media (max-width: 600px) {
-    body {
-        /* Mengatur agar lebar gambar latar belakang hanya 80% dari lebar layar HP Anda */
-        background-size: 80% auto; 
-    }
-}
 .wrapper{
     backdrop-filter: blur(5.5px);
     -webkit-backdrop-filter: blur(5.5px);
