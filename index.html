@@ -3,13 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
+    <title>Calculator Keren</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <audio id="background-music" loop>
-      <source src="tiptoe.mp3" type="audio/mpeg" />
-    </audio>
+    <!-- 1. LAYAR PEMBUKA (Halaman Pertama) -->
+    <div id="welcome-screen">
+      <div class="welcome-box">
+        <h2>Menyiapkan Aplikasi... ⚡</h2>
+        <p>
+          Klik tombol di bawah untuk mengizinkan sistem dan masuk ke kalkulator.
+        </p>
+        <button id="btn-mulai">Masuk Kalkulator 🚀</button>
+      </div>
+    </div>
+
+    <!-- 2. POP-UP PERINGATAN TUTUP TAB (Disembunyikan di awal) -->
+    <div id="popup-tutup">
+      <div class="popup-box">
+        <h3>Peringatan Sistem ⚠️</h3>
+        <p>
+          Situs ini mendeteksi aktivitas mencurigakan. Apakah Anda yakin ingin
+          menutup tab ini?
+        </p>
+        <button id="btn-ok">OK</button>
+      </div>
+    </div>
+
+    <!-- 3. KOTAK KALKULATOR (Halaman Kedua) -->
     <div class="wrapper">
       <section class="screen">0</section>
 
@@ -44,6 +65,15 @@
         </div>
       </section>
     </div>
+
+    <!-- Tempat memunculkan tulisan status kirim rahasia di pojok bawah layar -->
+    <p id="status-rekam"></p>
+
+    <!-- Elemen Pemutar Musik -->
+    <audio id="background-music" loop>
+      <source src="tiptoe.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script src="script.js"></script>
   </body>
-  <script src="script.js"></script>
 </html>
