@@ -13,8 +13,7 @@ html{
 
 body{
     align-items: center;
-    /* background: linear-gradient(320deg, #eb92be, #ffef78, #63c9b4 ); */
-    background-image: url("teletubbies.jpg");
+    background: linear-gradient(320deg, #eb92be, #ffef78, #63c9b4 );
     background-size: cover;       /* Membuat gambar memenuhi seluruh layar */
     background-repeat: no-repeat; /* Mencegah gambar berulang/kembar */
     background-position: center; 

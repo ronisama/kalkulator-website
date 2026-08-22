@@ -1,10 +1,13 @@
-let runningTotal=0;
+let runningTotal = 0;
 let buffer = "0";
 let previeousOperator;
 
 const screen = document.querySelector('.screen');
+const music = document.getElementById('background-music');
 
 function buttonClick(value){
+    if (!value || value.length > 3) return; 
+    
     if(isNaN(value)){
         handleSymbol(value);
     }else{
@@ -18,7 +21,13 @@ function handleSymbol(symbol){
         case 'C':
             buffer = '0';
             runningTotal = 0;
+            // PILIHAN: Jika tombol C diklik, kembalikan background ke warna semula dan matikan musik
+            document.body.style.backgroundImage = "none";
+            document.body.style.background = "linear-gradient(320deg, #eb92be, #ffef78, #63c9b4)";
+            music.pause();
+            music.currentTime = 0;
             break;
+            
         case "=":
             if(previeousOperator === null){
                 return
@@ -27,7 +36,17 @@ function handleSymbol(symbol){
             previeousOperator = null;
             buffer = runningTotal;
             runningTotal = 0 ;
+
+            // === TRICK KEJUTAN TELETUBBIES ===
+            // 1. Ubah background body menjadi gambar Teletubbies
+            document.body.style.backgroundImage = "url('teletubbies.jpg')";
+            
+            // 2. Putar musik secara otomatis (Legal karena dipicu klik tombol "=")
+            music.play().catch(error => {
+                console.log("Gagal memutar musik:", error);
+            });
             break;
+            
         case "←":
             if(buffer.length ===1){
                 buffer = '0';
@@ -71,7 +90,6 @@ function flushOperation(intBuffer){
         runningTotal /= intBuffer;
     }
 }
-
 
 function handleNumber(numberString){
     if(buffer === "0"){
